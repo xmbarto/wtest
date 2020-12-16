@@ -1,0 +1,14 @@
+/*
+!.gitignore
+!wp-content/
+
+wp-content/*
+!wp-content/plugins/
+!wp-content/themes/
+
+wp-content/plugins/*
+!wp-content/plugins/index.php
+
+wp-content/themes/*
+!wp-content/themes/astra-child/
+wp-content/themes/astra-child/node_modules/
