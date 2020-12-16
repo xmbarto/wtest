@@ -1,3 +1,4 @@
+<?php
 /**
  * Plugin Name:       b-plugin
  * Plugin URI:        https://mxbarto.com.ar/wtest
@@ -11,3 +12,8 @@
  * Text Domain:       b-plugin
  * Domain Path:       /languages
  */
+
+function wporg_filter_title( $title ) {
+    return 'The ' . $title;
+}
+add_filter( 'the_title', 'wporg_filter_title' );
