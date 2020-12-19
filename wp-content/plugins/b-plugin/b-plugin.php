@@ -17,3 +17,8 @@ add_filter( 'the_title', 'mxbarto_filter_title' );
 function mxbarto_filter_title( $title ) {
     return 'The ' . $title;
 }
+
+add_action('wp_footer', 'mxbarto_action_example');
+function mxbarto_action_example() {
+	echo "MxBarto is here.";
+}
