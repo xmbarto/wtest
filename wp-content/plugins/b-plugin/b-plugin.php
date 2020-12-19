@@ -13,7 +13,7 @@
  * Domain Path:       /languages
  */
 
-function wporg_filter_title( $title ) {
+add_filter( 'the_title', 'mxbarto_filter_title' );
+function mxbarto_filter_title( $title ) {
     return 'The ' . $title;
 }
-add_filter( 'the_title', 'wporg_filter_title' );
