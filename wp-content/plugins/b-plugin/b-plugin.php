@@ -20,5 +20,5 @@ function mxbarto_filter_title( $title ) {
 
 add_action('wp_footer', 'mxbarto_action_example');
 function mxbarto_action_example() {
-	echo <div style="background: #000; text-align: center;">MxBarto is here</div>;
+	echo '<div style="background: #000; text-align: center;">MxBarto is here</div>';
 }
