@@ -21,7 +21,7 @@ function barto_add_admin_page(){
 add_action('admin_menu','barto_add_admin_page');
 
 function barto_theme_create_page(){
-
+    require_once(get_template_directory() . '/inc/templates/barto-admin.php');
 }
 
 function mxbarto_theme_css_page(){
