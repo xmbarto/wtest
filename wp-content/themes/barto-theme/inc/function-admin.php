@@ -15,7 +15,8 @@ function barto_add_admin_page(){
         'manage_options', 
         'mxbarto',
         'barto_theme_create_page',
-        ''
+        'dashicons-editor-bold',
+        110
     );
 }
 
