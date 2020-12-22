@@ -12,4 +12,6 @@ wp-content/plugins/*
 
 wp-content/themes/*
 !wp-content/themes/astra-child/
+!wp-content/themes/barto-theme/
+!wp-content/themes/barto-theme/css
 wp-content/themes/astra-child/node_modules/
