@@ -45,5 +45,6 @@ function mxbarto_sidebar_options(){
 }
 
 function mxbarto_sidebar_name(){
-    echo '<input type="text" name="first_name" value=" " />';
+    $firstName = esc_attr( get_option( 'first_name' ) ) ;
+    echo '<input type="text" name="first_name" value="'.$firstName.'" placeholder="First name"/>';
 }
