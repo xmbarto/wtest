@@ -55,7 +55,7 @@ function mxbarto_sidebar_options(){
 
 function mxbarto_sidebar_name(){
     $firstName = esc_attr( get_option( 'first_name' ) ) ;
-    $firstName = esc_attr( get_option( 'last_name' ) ) ;
+    $lastName = esc_attr( get_option( 'last_name' ) ) ;
     echo    '<input type="text" name="first_name" value="'.$firstName.'" placeholder="First name"/>
             <input type="text" name="last_name" value="'.$lastName.'" placeholder="Last name"/>';
 }
