@@ -38,11 +38,15 @@ function mxbarto_custom_settings(){
     register_setting( 'mxbarto-settings-group', 'first_name'  );
     register_setting( 'mxbarto-settings-group', 'last_name'  );
     register_setting( 'mxbarto-settings-group', 'twitter_handler'  );
+    register_setting( 'mxbarto-settings-group', 'facebook_handler'  );
+    register_setting( 'mxbarto-settings-group', 'instagram_handler'  );
 
     add_settings_section( 'mxbarto-sidebar-options', 'Sidebar Options', 'mxbarto_sidebar_options', 'mxbarto' );
     
     add_settings_field( 'sidebar-name', 'Full name', 'mxbarto_sidebar_name', 'mxbarto', 'mxbarto-sidebar-options', );
-    add_settings_field( 'sidebar-twitter', 'Twitter user', 'mxbarto_sidebar_twitter', 'mxbarto', 'mxbarto-sidebar-options', );
+    add_settings_field( 'sidebar-twitter', 'Twitter account', 'mxbarto_sidebar_twitter', 'mxbarto', 'mxbarto-sidebar-options', );
+    add_settings_field( 'sidebar-facebook', 'Facebook account', 'mxbarto_sidebar_facebook', 'mxbarto', 'mxbarto-sidebar-options', );
+    add_settings_field( 'sidebar-instagram', 'Instagram account', 'mxbarto_sidebar_instagram', 'mxbarto', 'mxbarto-sidebar-options', );
 }
 
 function mxbarto_sidebar_options(){
@@ -59,4 +63,14 @@ function mxbarto_sidebar_name(){
 function mxbarto_sidebar_twitter(){
     $twitter = esc_attr( get_option( 'twitter_handler' ) ) ;
     echo    '<input type="text" name="twitter_handler" value="'.$twitter.'" placeholder="Twitter account"/>';
+}
+
+function mxbarto_sidebar_facebook(){
+    $facebook = esc_attr( get_option( 'facebook_handler' ) ) ;
+    echo    '<input type="text" name="facebook_handler" value="'.$facebook.'" placeholder="Facebook account"/>';
+}
+
+function mxbarto_sidebar_instagram(){
+    $instagram = esc_attr( get_option( 'instagram_handler' ) ) ;
+    echo    '<input type="text" name="instagram_handler" value="'.$instagram.'" placeholder="Instagram account"/>';
 }
