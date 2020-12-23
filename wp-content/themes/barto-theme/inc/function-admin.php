@@ -24,7 +24,6 @@ function barto_add_admin_page(){
 
 add_action('admin_menu','barto_add_admin_page');
 
-// Functions
 
 function barto_theme_create_page(){
     require_once(get_template_directory() . '/inc/templates/barto-admin.php');
@@ -37,9 +36,9 @@ function mxbarto_theme_css_page(){
 function mxbarto_custom_settings(){
     register_setting( 'mxbarto-settings-group', 'first_name'  );
     register_setting( 'mxbarto-settings-group', 'last_name'  );
-    register_setting( 'mxbarto-settings-group', 'twitter_handler'  );
-    register_setting( 'mxbarto-settings-group', 'facebook_handler'  );
-    register_setting( 'mxbarto-settings-group', 'instagram_handler'  );
+    register_setting( 'mxbarto-settings-group', 'twitter_handler', 'mxbarto_sanitize_twitter_handle'  );
+    register_setting( 'mxbarto-settings-group', 'facebook_handler', 'mxbarto_sanitize_facebook_handle'  );
+    register_setting( 'mxbarto-settings-group', 'instagram_handler', 'mxbarto_sanitize_instagram_handle'  );
 
     add_settings_section( 'mxbarto-sidebar-options', 'Sidebar Options', 'mxbarto_sidebar_options', 'mxbarto' );
     
@@ -73,4 +72,23 @@ function mxbarto_sidebar_facebook(){
 function mxbarto_sidebar_instagram(){
     $instagram = esc_attr( get_option( 'instagram_handler' ) ) ;
     echo    '<input type="text" name="instagram_handler" value="'.$instagram.'" placeholder="Instagram account"/>';
+}
+
+//Sanitization settings
+
+function mxbarto_sanitize_twitter_handler($input){
+    $output = sanitize_text_field($input);
+    $output = str_replace('@', '', $output);
+    return $output;
+}
+
+function mxbarto_sanitize_facebook_handler($input){
+    $output = sanitize_text_field($input);
+    return $output;
+}
+
+function mxbarto_sanitize_instagram_handler($input){
+    $output = sanitize_text_field($input);
+    $output = str_replace('@', '', $output);
+    return $output;
 }
