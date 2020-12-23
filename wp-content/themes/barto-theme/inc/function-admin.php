@@ -37,10 +37,12 @@ function mxbarto_theme_css_page(){
 function mxbarto_custom_settings(){
     register_setting( 'mxbarto-settings-group', 'first_name'  );
     register_setting( 'mxbarto-settings-group', 'last_name'  );
+    register_setting( 'mxbarto-settings-group', 'twitter_handler'  );
 
     add_settings_section( 'mxbarto-sidebar-options', 'Sidebar Options', 'mxbarto_sidebar_options', 'mxbarto' );
     
     add_settings_field( 'sidebar-name', 'Full name', 'mxbarto_sidebar_name', 'mxbarto', 'mxbarto-sidebar-options', );
+    add_settings_field( 'sidebar-twitter', 'Twitter user', 'mxbarto_sidebar_twitter', 'mxbarto', 'mxbarto-sidebar-options', );
 }
 
 function mxbarto_sidebar_options(){
@@ -52,4 +54,9 @@ function mxbarto_sidebar_name(){
     $firstName = esc_attr( get_option( 'last_name' ) ) ;
     echo    '<input type="text" name="first_name" value="'.$firstName.'" placeholder="First name"/>
             <input type="text" name="last_name" value="'.$lastName.'" placeholder="Last name"/>';
+}
+
+function mxbarto_sidebar_twitter(){
+    $twitter = esc_attr( get_option( 'twitter_handler' ) ) ;
+    echo    '<input type="text" name="twitter_handler" value="'.$twitter.'" placeholder="Twitter account"/>';
 }
