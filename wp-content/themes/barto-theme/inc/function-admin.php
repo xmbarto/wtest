@@ -20,11 +20,11 @@ function barto_add_admin_page(){
 
     //Activate custom settings
     add_action( 'admin_init', 'mxbarto_custom_settings' );
-
-
 }
 
 add_action('admin_menu','barto_add_admin_page');
+
+// Functions
 
 function barto_theme_create_page(){
     require_once(get_template_directory() . '/inc/templates/barto-admin.php');
@@ -36,8 +36,11 @@ function mxbarto_theme_css_page(){
 
 function mxbarto_custom_settings(){
     register_setting( 'mxbarto-settings-group', 'first_name'  );
+    register_setting( 'mxbarto-settings-group', 'last_name'  );
+
     add_settings_section( 'mxbarto-sidebar-options', 'Sidebar Options', 'mxbarto_sidebar_options', 'mxbarto' );
-    add_settings_field( 'sidebar-name', 'First Name', 'mxbarto_sidebar_name', 'mxbarto', 'mxbarto-sidebar-options', );
+    
+    add_settings_field( 'sidebar-name', 'Full name', 'mxbarto_sidebar_name', 'mxbarto', 'mxbarto-sidebar-options', );
 }
 
 function mxbarto_sidebar_options(){
@@ -46,5 +49,7 @@ function mxbarto_sidebar_options(){
 
 function mxbarto_sidebar_name(){
     $firstName = esc_attr( get_option( 'first_name' ) ) ;
-    echo '<input type="text" name="first_name" value="'.$firstName.'" placeholder="First name"/>';
+    $firstName = esc_attr( get_option( 'last_name' ) ) ;
+    echo    '<input type="text" name="first_name" value="'.$firstName.'" placeholder="First name"/>
+            <input type="text" name="last_name" value="'.$lastName.'" placeholder="Last name"/>';
 }
