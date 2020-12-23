@@ -36,9 +36,9 @@ function mxbarto_theme_css_page(){
 function mxbarto_custom_settings(){
     register_setting( 'mxbarto-settings-group', 'first_name'  );
     register_setting( 'mxbarto-settings-group', 'last_name'  );
-    register_setting( 'mxbarto-settings-group', 'twitter_handler', 'mxbarto_sanitize_twitter_handle'  );
-    register_setting( 'mxbarto-settings-group', 'facebook_handler', 'mxbarto_sanitize_facebook_handle'  );
-    register_setting( 'mxbarto-settings-group', 'instagram_handler', 'mxbarto_sanitize_instagram_handle'  );
+    register_setting( 'mxbarto-settings-group', 'twitter_handler', 'mxbarto_sanitize_twitter_handler'  );
+    register_setting( 'mxbarto-settings-group', 'facebook_handler', 'mxbarto_sanitize_facebook_handler'  );
+    register_setting( 'mxbarto-settings-group', 'instagram_handler', 'mxbarto_sanitize_instagram_handler'  );
 
     add_settings_section( 'mxbarto-sidebar-options', 'Sidebar Options', 'mxbarto_sidebar_options', 'mxbarto' );
     
