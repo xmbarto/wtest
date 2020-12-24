@@ -61,7 +61,9 @@ function mxbarto_sidebar_name(){
 
 function mxbarto_sidebar_twitter(){
     $twitter = esc_attr( get_option( 'twitter_handler' ) ) ;
-    echo    '<input type="text" name="twitter_handler" value="'.$twitter.'" placeholder="Twitter account"/>';
+    echo    
+        '<input type="text" name="twitter_handler" value="'.$twitter.'" placeholder="Twitter account"/>
+        <p class="description">Input your Twitter username without the @ character</p>';
 }
 
 function mxbarto_sidebar_facebook(){
@@ -71,7 +73,9 @@ function mxbarto_sidebar_facebook(){
 
 function mxbarto_sidebar_instagram(){
     $instagram = esc_attr( get_option( 'instagram_handler' ) ) ;
-    echo    '<input type="text" name="instagram_handler" value="'.$instagram.'" placeholder="Instagram account"/>';
+    echo    
+        '<input type="text" name="instagram_handler" value="'.$instagram.'" placeholder="Instagram account"/>
+        <p class="description">Input your Twitter username without the @ character</p>';
 }
 
 //Sanitization settings
