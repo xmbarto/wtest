@@ -75,7 +75,7 @@ function mxbarto_sidebar_instagram(){
     $instagram = esc_attr( get_option( 'instagram_handler' ) ) ;
     echo    
         '<input type="text" name="instagram_handler" value="'.$instagram.'" placeholder="Instagram account"/>
-        <p class="description">Input your Twitter username without the @ character</p>';
+        <p class="description">Input your Instagram username without the @ character</p>';
 }
 
 //Sanitization settings
