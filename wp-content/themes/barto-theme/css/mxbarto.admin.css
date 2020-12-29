@@ -3,8 +3,15 @@
 @package barto theme
 
 */
+.mxbarto-sidebar-wrapper{
+    display: flex;
+}
 .mxbarto-sidebar-preview{
     background-color: #222;
-    padding: 20px;
+    padding: 20px;  
+}
+
+.mxbarto-sidebar-preview h1,
+.mxbarto-sidebar-preview h2{
     color: #ddd;
 }
