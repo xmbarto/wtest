@@ -36,6 +36,7 @@ function mxbarto_theme_css_page(){
 function mxbarto_custom_settings(){
     register_setting( 'mxbarto-settings-group', 'first_name'  );
     register_setting( 'mxbarto-settings-group', 'last_name'  );
+    register_setting( 'mxbarto-settings-group', 'user_description' );
     register_setting( 'mxbarto-settings-group', 'twitter_handler', 'mxbarto_sanitize_twitter_handler'  );
     register_setting( 'mxbarto-settings-group', 'facebook_handler', 'mxbarto_sanitize_facebook_handler'  );
     register_setting( 'mxbarto-settings-group', 'instagram_handler', 'mxbarto_sanitize_instagram_handler'  );
@@ -43,6 +44,7 @@ function mxbarto_custom_settings(){
     add_settings_section( 'mxbarto-sidebar-options', 'Sidebar Options', 'mxbarto_sidebar_options', 'mxbarto' );
     
     add_settings_field( 'sidebar-name', 'Full name', 'mxbarto_sidebar_name', 'mxbarto', 'mxbarto-sidebar-options', );
+    add_settings_field( 'sidebar-user-description', 'Description', 'mxbarto_sidebar_user_description', 'mxbarto', 'mxbarto-sidebar-options', );
     add_settings_field( 'sidebar-twitter', 'Twitter account', 'mxbarto_sidebar_twitter', 'mxbarto', 'mxbarto-sidebar-options', );
     add_settings_field( 'sidebar-facebook', 'Facebook account', 'mxbarto_sidebar_facebook', 'mxbarto', 'mxbarto-sidebar-options', );
     add_settings_field( 'sidebar-instagram', 'Instagram account', 'mxbarto_sidebar_instagram', 'mxbarto', 'mxbarto-sidebar-options', );
@@ -57,6 +59,13 @@ function mxbarto_sidebar_name(){
     $lastName = esc_attr( get_option( 'last_name' ) ) ;
     echo    '<input type="text" name="first_name" value="'.$firstName.'" placeholder="First name"/>
             <input type="text" name="last_name" value="'.$lastName.'" placeholder="Last name"/>';
+}
+
+function mxbarto_sidebar_user_description(){
+    $userDescription = esc_attr( get_option( 'user_description') );
+    echo 
+        '<input type="text" name="user_description" value="'.$userDescription.'" placeholder="Description"/>
+        <p class="description">Write something smart.</p>';
 }
 
 function mxbarto_sidebar_twitter(){
