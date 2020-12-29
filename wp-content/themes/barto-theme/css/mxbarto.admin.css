@@ -5,7 +5,6 @@
 */
 .mxbarto-sidebar-wrapper{
     display: flex;
-    flex-direction: column-reverse;
 }
 .mxbarto-sidebar-preview{
     background-color: #222;
