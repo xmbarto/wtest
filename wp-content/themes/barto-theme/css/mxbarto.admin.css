@@ -3,3 +3,8 @@
 @package barto theme
 
 */
+.mxbarto-sidebar-preview{
+    background-color: #222;
+    padding: 20px;
+    color: #ddd;
+}

@@ -9,7 +9,9 @@ ADMIN PAGE
 */
 
 function mxbarto_loads_admin_scripts($hook){
-    echo $hook;
+    if('toplevel_page_mxbarto' != $hook){
+        return;
+    }
     wp_register_style( 'mxbarto-admin', get_template_directory_uri() . '/css/mxbarto.admin.css', array(), 'all' );
     wp_enqueue_style( 'mxbarto-admin');
 }
