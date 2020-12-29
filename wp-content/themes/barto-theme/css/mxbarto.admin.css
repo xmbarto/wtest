@@ -5,13 +5,16 @@
 */
 .mxbarto-sidebar-wrapper{
     display: flex;
+    flex-direction: column-reverse;
 }
 .mxbarto-sidebar-preview{
     background-color: #222;
-    padding: 20px;  
+    padding: 20px; 
+    margin-left: 20px; 
 }
 
 .mxbarto-sidebar-preview h1,
 .mxbarto-sidebar-preview h2{
+    text-align: center;
     color: #ddd;
 }
