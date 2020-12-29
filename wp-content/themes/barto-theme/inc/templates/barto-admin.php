@@ -9,6 +9,13 @@
 ?>
 
 <div class="mxbarto-sidebar-wrapper">
+    <div class="mxbarto-sidebar-form">
+        <form action="options.php" method="post">
+            <?php settings_fields( 'mxbarto-settings-group' ); ?>
+            <?php do_settings_sections( 'mxbarto' ); ?>
+            <?php submit_button();?>
+        </form>
+    </div>    
     <div class="mxbarto-sidebar-preview">
         <div class="mxbarto-sidebar">
             <h1 class="mxbarto-username"><?php print $fullName; ?></h1>
@@ -22,11 +29,4 @@
             </div>
         </div>
     </div>
-    <div class="mxbarto-sidebar-form">
-        <form action="options.php" method="post">
-            <?php settings_fields( 'mxbarto-settings-group' ); ?>
-            <?php do_settings_sections( 'mxbarto' ); ?>
-            <?php submit_button();?>
-        </form>
-    </div>    
 </div>    
