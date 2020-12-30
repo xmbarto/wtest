@@ -34,6 +34,7 @@ function mxbarto_theme_css_page(){
 }
 
 function mxbarto_custom_settings(){
+    register_setting( 'mxbarto-settings-group', 'profile_picture'  );
     register_setting( 'mxbarto-settings-group', 'first_name'  );
     register_setting( 'mxbarto-settings-group', 'last_name'  );
     register_setting( 'mxbarto-settings-group', 'user_description' );
@@ -43,6 +44,7 @@ function mxbarto_custom_settings(){
 
     add_settings_section( 'mxbarto-sidebar-options', 'Sidebar Options', 'mxbarto_sidebar_options', 'mxbarto' );
     
+    add_settings_field( 'sidebar-profile', 'Profile Picture', 'mxbarto_sidebar_picture', 'mxbarto', 'mxbarto-sidebar-options', );
     add_settings_field( 'sidebar-name', 'Full name', 'mxbarto_sidebar_name', 'mxbarto', 'mxbarto-sidebar-options', );
     add_settings_field( 'sidebar-user-description', 'Description', 'mxbarto_sidebar_user_description', 'mxbarto', 'mxbarto-sidebar-options', );
     add_settings_field( 'sidebar-twitter', 'Twitter account', 'mxbarto_sidebar_twitter', 'mxbarto', 'mxbarto-sidebar-options', );
@@ -52,6 +54,12 @@ function mxbarto_custom_settings(){
 
 function mxbarto_sidebar_options(){
     echo 'Customize your sidebar information';
+}
+
+function mxbarto_sidebar_picture(){
+    $picture = esc_attr( get_option( 'profile_picture' ) );
+    echo    '<input type="hidden" name="profile_picture" value="'.$picture.'"/>
+            <input type="button" value="Upload Profile Picture" class="button secondary-button" id="mxbarto-upload-button"/>';
 }
 
 function mxbarto_sidebar_name(){
