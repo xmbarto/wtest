@@ -59,7 +59,7 @@ function mxbarto_sidebar_options(){
 function mxbarto_sidebar_picture(){
     $picture = esc_attr( get_option( 'profile_picture' ) );
     echo    '<input type="hidden" name="profile_picture" value="'.$picture.'"/>
-            <input type="file" value="Upload Profile Picture" class="button secondary-button" id="mxbarto-upload-button"/>';
+            <input type="button" value="Upload Profile Picture" class="button secondary-button" id="mxbarto-upload-button"/>';
 }
 
 function mxbarto_sidebar_name(){
