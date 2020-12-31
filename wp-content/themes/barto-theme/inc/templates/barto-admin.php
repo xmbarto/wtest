@@ -6,6 +6,7 @@
     $lastName = esc_attr( get_option( 'last_name' ) ) ;
     $fullName = $firstName . ' ' . $lastName;
     $userDescription = esc_attr( get_option( 'user_description') );
+    $picture = esc_attr( get_option( 'profile_picture' ) );
 ?>
 
 <div class="mxbarto-sidebar-wrapper">
@@ -18,6 +19,7 @@
     </div>    
     <div class="mxbarto-sidebar-preview">
         <div class="mxbarto-sidebar">
+            <div class="mxbarto-profile-picture"><?php print $picture; ?></div>
             <h1 class="mxbarto-username"><?php print $fullName; ?></h1>
             <h2 class="mxbarto-description"><?php print $userDescription; ?></h2>
             <div class="mxbarto-icon-wrapper">
